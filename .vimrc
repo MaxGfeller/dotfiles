@@ -36,7 +36,14 @@ Bundle 'bling/vim-airline'
 
 inoremap jk <Esc>
 
-set statusline=%f%m%r%h%w%<\ %{&ff}\ %Y\ %{fugitive#statusline()}\ %=%l/%L,%v\ %p%%
+set laststatus=2
+
+set guifont=Source\ Code\ Pro\ for\ Powerline:h14
+let g:airline_powerline_fonts = 1
+let g:airline_theme             = 'powerlineish'
+let g:airline_enable_branch     = 1
+let g:airline_enable_syntastic  = 1
+
 
 set tabstop=2
 set softtabstop=2
