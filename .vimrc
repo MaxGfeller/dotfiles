@@ -22,6 +22,17 @@ set backspace=2
 set nu
 set hidden
 set mouse=a
+filetype off
+
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+Bundle 'gmarik/vundle'
+
+filetype plugin indent on
+set t_Co=256
+Bundle 'jelera/vim-javascript-syntax'
+Bundle 'bling/vim-airline'
 
 inoremap jk <Esc>
 
