@@ -53,17 +53,22 @@ set nowrap
 
 au FileType javascript set tabstop=2 softtabstop=2 shiftwidth=2 expandtab
 au FileType css set omnifunc=csscomplete#CompleteCSS
-au FileType javascript set omnifunc=javascriptcomplete#CompleteJS
 
 nmap <leader>' :set relativenumber!<cr>
 nmap <leader>" :set number!<cr>
 
-au FileType c,cpp,java,php,js,py,coffee au BufWritePre <buffer> :call setline(1,map(getline(1,"$"),'substitute(v:val,"\\s\\+$","","")'))
+"au FileType c,cpp,java,php,js,py,coffee au BufWritePre <buffer> :call setline(1,map(getline(1,"$"),'substitute(v:val,"\\s\\+$","","")'))
 
-hi CursorLine term=underline ctermbg=236 guibg=#32322f
+"hi CursorLine term=underline ctermbg=236 guibg=#32322f
 
 inoremap {      {}<Left>
 inoremap {<CR>  {<CR>}<Esc>O
 inoremap {{     {
 inoremap {}     {}
+
+inoremap        (  ()<Left>
+inoremap <expr> )  strpart(getline('.'), col('.')-1, 1) == ")" ? "\<Right>" : ")"
+
+inoremap        (  ()<Left>
+inoremap <expr> )  strpart(getline('.'), col('.')-1, 1) == ")" ? "\<Right>" : ")"
 
