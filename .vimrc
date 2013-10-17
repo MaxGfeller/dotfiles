@@ -1,3 +1,4 @@
+set mouse=ar
 set nocompatible     
 set virtualedit=
 
